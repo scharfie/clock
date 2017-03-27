@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+      <style type="text/css">
+html, html body {
+  background: rgba(0, 0, 0, 0) !important;
+}
+body {
+  color: #fff;
+}
+#clock {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  cursor: move;
+  font-family: "Menlo";
+  font-size: 60px;
+  color: #b7ff00;
+  text-shadow: 1px 1px 3px #333;
+}
+      </style>
+  </head>
+  <body>
+    <div id="clock">i am clock!</div>
+    <!-- <h1>Hello World!</h1> -->
+    <!-- We are using node <script>document.write(process.versions.node)</script>, -->
+    <!-- Chrome <script>document.write(process.versions.chrome)</script>, -->
+    <!-- and Electron <script>document.write(process.versions.electron)</script>. -->
+  </body>
+
+  <script>
+    var clock = document.getElementById("clock");
+    var zeroPad = function(value) {
+      if (value < 10) { value = "0" + value; }
+      return value;
+    }
+
+    var updateClock = function() {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = zeroPad(now.getMinutes());
+      var seconds = zeroPad(now.getSeconds());
+
+      var formatted = [hours, minutes, seconds].join(":");
+      clock.innerHTML = formatted;
+    };
+
+    updateClock();
+    window.setInterval(updateClock, 500);
+  </script>
+
+</html>

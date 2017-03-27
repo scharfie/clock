@@ -1,0 +1,10 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "Chris Scharf <scharfie@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.6.2"
+  }
+}
