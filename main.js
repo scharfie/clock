@@ -9,12 +9,14 @@ let win
 function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
-    // backgroundColor: "rgba(0,0,0,0)",
+    // backgroundColor: "rgba(0,0,0,0.2)",
     alwaysOnTop: true,
-    width: 600,
-    height: 300,
+    width: 300,
+    height: 70,
     frame: false,
     transparent: true,
+    x: 0,
+    y: 0
   })
 
   // and load the index.html of the app.
