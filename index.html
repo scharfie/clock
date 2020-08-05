@@ -19,7 +19,7 @@ body {
   -webkit-user-select: none;
   -webkit-app-region: drag;
   cursor: move;
-  font-family: "Menlo";
+  font-family: "Menlo", sans-serif;
   font-size: 60px;
   color: #b7ff00;
   text-shadow: 1px 1px 3px #333;
@@ -48,12 +48,18 @@ body {
       var minutes = zeroPad(now.getMinutes());
       var seconds = zeroPad(now.getSeconds());
 
+      if (hours > 12) { hours -= 12; }
+
       var formatted = [hours, minutes, seconds].join(":");
       clock.innerHTML = formatted;
     };
 
     updateClock();
     window.setInterval(updateClock, 500);
+
+    document.addEventListener('dblclick', function() {
+      window.close();
+    });
   </script>
 
 </html>
